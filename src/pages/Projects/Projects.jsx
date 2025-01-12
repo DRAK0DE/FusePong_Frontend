@@ -4,7 +4,7 @@ import api from '../../services/api';
 function Projects() {
   const [projects, setProjects] = useState([]);
   const [companies, setCompanies] = useState([]);
-  const [actionType, setActionType] = useState('newProject'); // 'newProject' o 'addDescription'
+  const [actionType, setActionType] = useState('newProject');
   const [newProjectName, setNewProjectName] = useState('');
   const [newDescriptions, setNewDescriptions] = useState(['']);
   const [newProjectCompanyId, setNewProjectCompanyId] = useState('');
@@ -24,7 +24,6 @@ function Projects() {
     fetchCompanies();
   }, []);
 
-  // Función para crear un nuevo proyecto
   const handleCreateProject = async (e) => {
     e.preventDefault();
     try {
@@ -43,7 +42,6 @@ function Projects() {
     }
   };
 
-  // Función para añadir una nueva descripción a un proyecto existente
   const handleAddDescriptionToProject = async (e) => {
     e.preventDefault();
     if (!selectedProjectId || !newDescriptionForProject) {
@@ -76,7 +74,6 @@ function Projects() {
     <div style={{ margin: '2rem' }}>
       <h2>Listado de Proyectos</h2>
 
-      {/* Selector para acción */}
       <div style={{ marginBottom: '1rem' }}>
         <label>¿Qué deseas hacer?</label>
         <select value={actionType} onChange={(e) => setActionType(e.target.value)}>
@@ -85,7 +82,6 @@ function Projects() {
         </select>
       </div>
 
-      {/* Formulario dinámico basado en la opción seleccionada */}
       {actionType === 'newProject' ? (
         <form onSubmit={handleCreateProject}>
           <h3>Crear Nuevo Proyecto</h3>
@@ -167,7 +163,6 @@ function Projects() {
         </form>
       )}
 
-      {/* Listado de proyectos */}
       <h3 style={{ marginTop: '2rem' }}>Proyectos Existentes</h3>
       <ul>
         {projects.map((project) => (

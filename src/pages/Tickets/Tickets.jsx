@@ -3,10 +3,9 @@ import api from '../../services/api';
 
 function Tickets() {
   const [tickets, setTickets] = useState([]);
-  const [editTicketId, setEditTicketId] = useState(null); // ID del ticket que se edita
-  const [editedTitle, setEditedTitle] = useState(''); // Título editado del ticket
+  const [editTicketId, setEditTicketId] = useState(null);
+  const [editedTitle, setEditedTitle] = useState('');
 
-  // Obtener los tickets al cargar el componente
   useEffect(() => {
     const fetchTickets = async () => {
       const response = await api.get('/tickets');
@@ -15,7 +14,6 @@ function Tickets() {
     fetchTickets();
   }, []);
 
-  // Función para manejar el cambio del estado del ticket
   const handleStatusChange = async (ticketId, newStatus) => {
     try {
       await api.put(`/tickets/${ticketId}`, { status: newStatus });
@@ -31,13 +29,11 @@ function Tickets() {
     }
   };
 
-  // Función para habilitar edición del título
   const enableEditTicket = (ticket) => {
     setEditTicketId(ticket._id);
     setEditedTitle(ticket.title);
   };
 
-  // Función para guardar cambios del ticket
   const saveTicketChanges = async (ticketId) => {
     try {
       await api.put(`/tickets/${ticketId}`, { title: editedTitle });
@@ -47,7 +43,7 @@ function Tickets() {
           ticket._id === ticketId ? { ...ticket, title: editedTitle } : ticket
         )
       );
-      setEditTicketId(null); // Salir del modo edición
+      setEditTicketId(null);
     } catch (error) {
       console.error('Error al actualizar el ticket:', error);
       alert('Error al actualizar el ticket');

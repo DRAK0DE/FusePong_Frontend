@@ -1,43 +1,6 @@
-// import React from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-// // Importaciones de tus páginas
-// import Login from './pages/Auth/Login';
-// import Register from './pages/Auth/Register';
-// import Dashboard from './pages/Dashboard/Dashboard';
-// import Projects from './pages/Projects/Projects';
-// import Tickets from './pages/Tickets/Tickets';
-// import UserStories from './pages/UserStories/UserStories';
-
-// // Si tienes NavBar u otros componentes globales
-// import NavBar from './components/NavBar';
-
-// function App() {
-//   return (
-//     <Router>
-//       {/* NavBar se renderiza siempre */}
-//       <NavBar />
-
-//       <Routes>
-//         {/* Rutas de autenticación */}
-//         <Route path="/login" element={<Login />} />
-//         <Route path="/register" element={<Register />} />
-
-//         {/* Rutas principales */}
-//         <Route path="/" element={<Dashboard />} />
-//         <Route path="/projects" element={<Projects />} />
-//         <Route path="/tickets" element={<Tickets />} />
-//         <Route path="/user-stories" element={<UserStories />} />
-//       </Routes>
-//     </Router>
-//   );
-// }
-
-// export default App;
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './contexts/AuthContext';  // Importar el contexto
+import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import Dashboard from './pages/Dashboard/Dashboard';

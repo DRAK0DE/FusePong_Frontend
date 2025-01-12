@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';  // Importar el contexto de autenticación
+import { useAuth } from '../contexts/AuthContext';
 
 function NavBar() {
   const { isAuthenticated, logout } = useAuth();
@@ -13,7 +13,6 @@ function NavBar() {
           <Link to="/projects" style={{ marginRight: '10px' }}>Proyectos</Link>
           <Link to="/create-user-story" style={{ marginRight: '10px' }}>Crear Ticket</Link>
           <Link to="/tickets" style={{ marginRight: '10px' }}>Tickets</Link>
-          
           <button onClick={logout} style={{ marginLeft: '10px' }}>Cerrar sesión</button>
         </>
       ) : (
@@ -27,5 +26,3 @@ function NavBar() {
 }
 
 export default NavBar;
-
-

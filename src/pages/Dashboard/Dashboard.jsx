@@ -7,7 +7,7 @@ function Dashboard() {
       <p>
         Desde aquí podrás gestionar tus proyectos, historias de usuario y tickets de desarrollo.
       </p>
-      {/* Puedes agregar gráficos, paneles de estado, etc. */}
+      {}
     </div>
   );
 }
