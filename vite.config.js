@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -8,6 +8,8 @@ export default defineConfig({
     port: 5173, // Puerto para desarrollo local
   },
   define: {
-    'process.env': {}, // Asegura la compatibilidad con variables de entorno
+    'process.env': {
+      VITE_API_URL: JSON.stringify('https://fusepongbackend-production.up.railway.app/'),
+    },
   },
-})
+});

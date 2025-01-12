@@ -1,9 +1,8 @@
 import axios from 'axios';
 
-// Ajusta la baseURL a donde corre tu backend. 
-// En desarrollo local, si tu servidor corre en puerto 4000, usa:
+// Configuración de Axios con la URL del backend en Railway
 const api = axios.create({
-  baseURL: 'http://localhost:4000/api'
+  baseURL: import.meta.env.VITE_API_URL || 'https://fusepongbackend-production.up.railway.app/api',
 });
 
 export default api;
