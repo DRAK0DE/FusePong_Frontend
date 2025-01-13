@@ -23,12 +23,14 @@ function Login() {
   };
 
   return (
-    <div style={{ margin: '2rem' }}>
-      <h2>Iniciar Sesión</h2>
-      <form onSubmit={handleLogin}>
-        <div>
-          <label>Correo electrónico</label><br />
-          <input
+    <div className='contentLogin'>
+      <h2 className='contentLogin__titulo'>Iniciar Sesión</h2>
+
+      <div className='contentLogin__login'>
+      <form className='login__form form' onSubmit={handleLogin}>
+        <div className='form__email email'>
+          <label className='email__label'>Correo electrónico</label><br />
+          <input className='email__input'
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -36,9 +38,9 @@ function Login() {
           />
         </div>
 
-        <div style={{ marginTop: '1rem' }}>
-          <label>Contraseña</label><br />
-          <input
+        <div className='form__password password'>
+          <label className='password__label'>Contraseña</label><br />
+          <input className='password__input'
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -46,12 +48,12 @@ function Login() {
           />
         </div>
 
-        <button type="submit" style={{ marginTop: '1rem' }}>
+        <button className='form__button' type="submit">
           Ingresar
         </button>
       </form>
+      </div>
     </div>
   );
 }
-
 export default Login;

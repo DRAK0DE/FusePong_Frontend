@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
 
+
 function Tickets() {
   const [tickets, setTickets] = useState([]);
   const [editTicketId, setEditTicketId] = useState(null);
@@ -51,8 +52,8 @@ function Tickets() {
   };
 
   return (
-    <div style={{ margin: '2rem' }}>
-      <h2>Listado de Tickets</h2>
+    <div >
+      <h2 >Listado de Tickets</h2>
       <ul style={{ listStyleType: 'none', padding: 0 }}>
         {tickets.map((ticket) => (
           <li
