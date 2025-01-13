@@ -26,32 +26,32 @@ function Login() {
     <div className='contentLogin'>
       <h2 className='contentLogin__titulo'>Iniciar Sesión</h2>
 
-      <div className='contentLogin__login'>
-      <form className='login__form form' onSubmit={handleLogin}>
-        <div className='form__email email'>
-          <label className='email__label'>Correo electrónico</label><br />
-          <input className='email__input'
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Ingresa tu correo"
-          />
-        </div>
+      <div className='contentLogin__login login'>
+        <form className='login__form form' onSubmit={handleLogin}>
+          <div className='form__email email'>
+            <label className='email__label'>Correo electrónico</label><br />
+            <input className='email__input'
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Ingresa tu correo"
+            />
+          </div>
 
-        <div className='form__password password'>
-          <label className='password__label'>Contraseña</label><br />
-          <input className='password__input'
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Ingresa tu contraseña"
-          />
-        </div>
+          <div className='form__password password'>
+            <label className='password__label'>Contraseña</label><br />
+            <input className='password__input'
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Ingresa tu contraseña"
+            />
+          </div>
 
-        <button className='form__button' type="submit">
-          Ingresar
-        </button>
-      </form>
+          <button className='form__button' type="submit">
+            Ingresar
+          </button>
+        </form>
       </div>
     </div>
   );

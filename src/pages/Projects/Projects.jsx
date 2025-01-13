@@ -71,14 +71,14 @@ function Projects() {
   };
 
   return (
-    <div style={{ margin: '2rem' }}>
-      <h2>Listado de Proyectos</h2>
+    <div className='contentProjects' >
+      <h2 className='contentProjects__titulo'>Proyectos</h2>
 
-      <div style={{ marginBottom: '1rem' }}>
-        <label>¿Qué deseas hacer?</label>
-        <select value={actionType} onChange={(e) => setActionType(e.target.value)}>
+      <div className='contentProjects__option option' >
+        <label className='option__label'>¿Qué deseas hacer?</label> 
+        <select className='option__select' value={actionType} onChange={(e) => setActionType(e.target.value)}>
           <option value="newProject">Crear un nuevo proyecto</option>
-          <option value="addDescription">Añadir una descripción a un proyecto existente</option>
+          <option value="addDescription">Añadir una historia de usuario a un proyecto ya creado</option>
         </select>
       </div>
 
@@ -96,7 +96,7 @@ function Projects() {
             />
           </div>
           <div style={{ marginTop: '1rem' }}>
-            <label>Descripciones del Proyecto</label>
+            <label>Historia de Usuario</label>
             {newDescriptions.map((description, index) => (
               <div key={index} style={{ marginBottom: '0.5rem' }}>
                 <textarea
@@ -111,8 +111,8 @@ function Projects() {
                 />
               </div>
             ))}
-            <button type="button" onClick={() => setNewDescriptions([...newDescriptions, ''])}>
-              Añadir otra descripción
+            <button className='form__button'  type="button" onClick={() => setNewDescriptions([...newDescriptions, ''])}>
+              Añadir otra historia de usuario
             </button>
           </div>
           <div style={{ marginTop: '1rem' }}>
@@ -130,7 +130,7 @@ function Projects() {
               ))}
             </select>
           </div>
-          <button type="submit" style={{ marginTop: '1rem' }}>Crear Proyecto</button>
+          <button className='form__button'  type="submit" style={{ marginTop: '1rem' }}>Crear Proyecto</button>
         </form>
       ) : (
         <form onSubmit={handleAddDescriptionToProject}>

@@ -8,6 +8,7 @@ function CreateUserStory() {
   const [selectedDescription, setSelectedDescription] = useState('');
   const [ticketTitle, setTicketTitle] = useState('');
 
+  // Obtener proyectos al cargar el componente
   useEffect(() => {
     const fetchProjects = async () => {
       const response = await api.get('/projects');
@@ -16,6 +17,7 @@ function CreateUserStory() {
     fetchProjects();
   }, []);
 
+  // Actualizar descripciones al seleccionar un proyecto
   const handleProjectChange = (e) => {
     const projectId = e.target.value;
     setSelectedProjectId(projectId);

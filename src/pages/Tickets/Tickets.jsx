@@ -52,8 +52,8 @@ function Tickets() {
   };
 
   return (
-    <div >
-      <h2 >Listado de Tickets</h2>
+    <div className='contentTickets' >
+      <h2 className='contentTickets__titulo'>Listado de Tickets</h2>
       <ul style={{ listStyleType: 'none', padding: 0 }}>
         {tickets.map((ticket) => (
           <li

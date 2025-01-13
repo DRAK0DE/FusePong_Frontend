@@ -37,49 +37,52 @@ function Register() {
   };
 
   return (
-    <div style={{ margin: '2rem' }}>
-      <h2>Crear Cuenta</h2>
-      <form onSubmit={handleRegister}>
-        <div>
-          <label>Correo electrónico</label><br />
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Ingresa tu correo"
-          />
-        </div>
+    <div className='contentRegister'>
+      <h2 className='contentRegister__titulo'>Crear Cuenta</h2>
+      
+      <div className='contentRegister__register register'>
+        <form className='register__form form' onSubmit={handleRegister}>
+          <div className='form__email email'>
+            <label className='email__label'>Correo electrónico</label><br />
+            <input className='email__input'
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Ingresa tu correo"
+            />
+          </div>
 
-        <div style={{ marginTop: '1rem' }}>
-          <label>Contraseña</label><br />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Ingresa tu contraseña"
-          />
-        </div>
+          <div className='form__password password'>
+          <label className='password__label'>Contraseña</label><br />
+            <input className='password__input'
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Ingresa tu contraseña"
+            />
+          </div>
 
-        <div style={{ marginTop: '1rem' }}>
-          <label>Selecciona una compañía</label><br />
-          <select
-            value={companyId}
-            onChange={(e) => setCompanyId(e.target.value)}
-            required
-          >
-            <option value="">-- Seleccionar Compañía --</option>
-            {companies.map((company) => (
-              <option key={company._id} value={company._id}>
-                {company.name}
-              </option>
-            ))}
-          </select>
-        </div>
+          <div className='form__company company'>
+          <label className='company__label'>Selecciona una compañía</label><br />
+            <select className='company__select select'
+              value={companyId}
+              onChange={(e) => setCompanyId(e.target.value)}
+              required
+            >
+              <option value="">-- Seleccionar Compañía --</option>
+              {companies.map((company) => (
+                <option key={company._id} value={company._id}>
+                  {company.name}
+                </option>
+              ))}
+            </select>
+          </div>
 
-        <button type="submit" style={{ marginTop: '1rem' }}>
-          Registrarme
-        </button>
-      </form>
+          <button className='form__button' type="submit">
+            Registrarme
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
