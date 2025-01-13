@@ -68,7 +68,7 @@ function Tickets() {
               <strong>Proyecto:</strong> {ticket.projectId?.name || 'Sin proyecto asignado'}
             </p>
             <p>
-              <strong>Descripción:</strong> {ticket.projectId?.description || 'Sin descripción'}
+            <strong>Descripción:</strong> {ticket.description || 'Sin descripción'}
             </p>
             <p>
               <strong>Ticket:</strong>
